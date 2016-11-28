@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E9DED4111DECA79800B1DBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DED4101DECA79800B1DBC7 /* AppDelegate.swift */; };
+		E9DED4131DECA79800B1DBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DED4121DECA79800B1DBC7 /* ViewController.swift */; };
+		E9DED4161DECA79800B1DBC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DED4141DECA79800B1DBC7 /* Main.storyboard */; };
+		E9DED4191DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9DED4171DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodeld */; };
+		E9DED41B1DECA79800B1DBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DED41A1DECA79800B1DBC7 /* Assets.xcassets */; };
+		E9DED41E1DECA79800B1DBC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DED41C1DECA79800B1DBC7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E9DED40D1DECA79800B1DBC7 /* Deveslopes Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deveslopes Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9DED4101DECA79800B1DBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9DED4121DECA79800B1DBC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9DED4151DECA79800B1DBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E9DED4181DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Deveslopes_Social.xcdatamodel; sourceTree = "<group>"; };
+		E9DED41A1DECA79800B1DBC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9DED41D1DECA79800B1DBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E9DED41F1DECA79800B1DBC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9DED40A1DECA79800B1DBC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E9DED4041DECA79800B1DBC7 = {
+			isa = PBXGroup;
+			children = (
+				E9DED40F1DECA79800B1DBC7 /* Deveslopes Social */,
+				E9DED40E1DECA79800B1DBC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9DED40E1DECA79800B1DBC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9DED40D1DECA79800B1DBC7 /* Deveslopes Social.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9DED40F1DECA79800B1DBC7 /* Deveslopes Social */ = {
+			isa = PBXGroup;
+			children = (
+				E9DED4101DECA79800B1DBC7 /* AppDelegate.swift */,
+				E9DED4121DECA79800B1DBC7 /* ViewController.swift */,
+				E9DED4141DECA79800B1DBC7 /* Main.storyboard */,
+				E9DED41A1DECA79800B1DBC7 /* Assets.xcassets */,
+				E9DED41C1DECA79800B1DBC7 /* LaunchScreen.storyboard */,
+				E9DED41F1DECA79800B1DBC7 /* Info.plist */,
+				E9DED4171DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodeld */,
+			);
+			path = "Deveslopes Social";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9DED40C1DECA79800B1DBC7 /* Deveslopes Social */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9DED4221DECA79800B1DBC7 /* Build configuration list for PBXNativeTarget "Deveslopes Social" */;
+			buildPhases = (
+				E9DED4091DECA79800B1DBC7 /* Sources */,
+				E9DED40A1DECA79800B1DBC7 /* Frameworks */,
+				E9DED40B1DECA79800B1DBC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Deveslopes Social";
+			productName = "Deveslopes Social";
+			productReference = E9DED40D1DECA79800B1DBC7 /* Deveslopes Social.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9DED4051DECA79800B1DBC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Christopher Todd Heins";
+				TargetAttributes = {
+					E9DED40C1DECA79800B1DBC7 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = E9JK8NTEP9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E9DED4081DECA79800B1DBC7 /* Build configuration list for PBXProject "Deveslopes Social" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9DED4041DECA79800B1DBC7;
+			productRefGroup = E9DED40E1DECA79800B1DBC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9DED40C1DECA79800B1DBC7 /* Deveslopes Social */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9DED40B1DECA79800B1DBC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9DED41E1DECA79800B1DBC7 /* LaunchScreen.storyboard in Resources */,
+				E9DED41B1DECA79800B1DBC7 /* Assets.xcassets in Resources */,
+				E9DED4161DECA79800B1DBC7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9DED4091DECA79800B1DBC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9DED4191DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodeld in Sources */,
+				E9DED4131DECA79800B1DBC7 /* ViewController.swift in Sources */,
+				E9DED4111DECA79800B1DBC7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E9DED4141DECA79800B1DBC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9DED4151DECA79800B1DBC7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E9DED41C1DECA79800B1DBC7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9DED41D1DECA79800B1DBC7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9DED4201DECA79800B1DBC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9DED4211DECA79800B1DBC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9DED4231DECA79800B1DBC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E9JK8NTEP9;
+				INFOPLIST_FILE = "Deveslopes Social/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.toddheins.Deveslopes-Social";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E9DED4241DECA79800B1DBC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E9JK8NTEP9;
+				INFOPLIST_FILE = "Deveslopes Social/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.toddheins.Deveslopes-Social";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9DED4081DECA79800B1DBC7 /* Build configuration list for PBXProject "Deveslopes Social" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9DED4201DECA79800B1DBC7 /* Debug */,
+				E9DED4211DECA79800B1DBC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9DED4221DECA79800B1DBC7 /* Build configuration list for PBXNativeTarget "Deveslopes Social" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9DED4231DECA79800B1DBC7 /* Debug */,
+				E9DED4241DECA79800B1DBC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9DED4171DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9DED4181DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodel */,
+			);
+			currentVersion = E9DED4181DECA79800B1DBC7 /* Deveslopes_Social.xcdatamodel */;
+			path = Deveslopes_Social.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E9DED4051DECA79800B1DBC7 /* Project object */;
+}
