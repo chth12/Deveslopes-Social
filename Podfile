@@ -8,6 +8,7 @@ target 'Deveslopes Social' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'FBSDKLoginKit'
   # Pods for Deveslopes Social
 
 end

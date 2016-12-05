@@ -36,5 +36,7 @@
 	<string>1:81862619769:ios:e6cc3314ad5d1e98</string>
 	<key>DATABASE_URL</key>
 	<string>https://deveslopes-social.firebaseio.com</string>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<string>NO</string>
 </dict>
 </plist>

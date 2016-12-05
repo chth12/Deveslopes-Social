@@ -28,6 +28,7 @@
 		3516E8C496460C8F7E2C089B /* Pods-Deveslopes Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deveslopes Social.release.xcconfig"; path = "Pods/Target Support Files/Pods-Deveslopes Social/Pods-Deveslopes Social.release.xcconfig"; sourceTree = "<group>"; };
 		E902EA651DF1D5370064B442 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		E902EA681DF1D6D00064B442 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E992A66A1DF606F700ECB1D7 /* Deveslopes Social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Deveslopes Social.entitlements"; sourceTree = "<group>"; };
 		E9DBC8EC1DF1D8C2003FA4B6 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E9DBC8EE1DF1DA0B003FA4B6 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		E9DBC8F01DF1E7D9003FA4B6 /* FancySignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancySignIn.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		E9DED40F1DECA79800B1DBC7 /* Deveslopes Social */ = {
 			isa = PBXGroup;
 			children = (
+				E992A66A1DF606F700ECB1D7 /* Deveslopes Social.entitlements */,
 				E902EA671DF1D6BE0064B442 /* Utils */,
 				E9DED4291DECAC9D00B1DBC7 /* Model */,
 				E9DED4281DECAC9700B1DBC7 /* View */,
@@ -178,6 +180,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = E9JK8NTEP9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
