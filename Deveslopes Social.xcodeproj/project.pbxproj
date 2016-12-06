@@ -12,6 +12,7 @@
 		E902EA691DF1D6D00064B442 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902EA681DF1D6D00064B442 /* Constants.swift */; };
 		E992A66C1DF70BEF00ECB1D7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992A66B1DF70BEF00ECB1D7 /* FeedVC.swift */; };
 		E992A66E1DF72D7700ECB1D7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992A66D1DF72D7700ECB1D7 /* CircleView.swift */; };
+		E992A6701DF7429C00ECB1D7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992A66F1DF7429C00ECB1D7 /* PostCell.swift */; };
 		E9DBC8ED1DF1D8C2003FA4B6 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBC8EC1DF1D8C2003FA4B6 /* RoundButton.swift */; };
 		E9DBC8EF1DF1DA0B003FA4B6 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBC8EE1DF1DA0B003FA4B6 /* FancyField.swift */; };
 		E9DBC8F11DF1E7D9003FA4B6 /* FancySignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBC8F01DF1E7D9003FA4B6 /* FancySignIn.swift */; };
@@ -33,6 +34,7 @@
 		E992A66A1DF606F700ECB1D7 /* Deveslopes Social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Deveslopes Social.entitlements"; sourceTree = "<group>"; };
 		E992A66B1DF70BEF00ECB1D7 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		E992A66D1DF72D7700ECB1D7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		E992A66F1DF7429C00ECB1D7 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E9DBC8EC1DF1D8C2003FA4B6 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E9DBC8EE1DF1DA0B003FA4B6 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		E9DBC8F01DF1E7D9003FA4B6 /* FancySignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancySignIn.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				E9DBC8EE1DF1DA0B003FA4B6 /* FancyField.swift */,
 				E9DBC8F01DF1E7D9003FA4B6 /* FancySignIn.swift */,
 				E992A66D1DF72D7700ECB1D7 /* CircleView.swift */,
+				E992A66F1DF7429C00ECB1D7 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				E902EA661DF1D5370064B442 /* FancyView.swift in Sources */,
 				E992A66E1DF72D7700ECB1D7 /* CircleView.swift in Sources */,
 				E9DBC8F11DF1E7D9003FA4B6 /* FancySignIn.swift in Sources */,
+				E992A6701DF7429C00ECB1D7 /* PostCell.swift in Sources */,
 				E9DBC8EF1DF1DA0B003FA4B6 /* FancyField.swift in Sources */,
 				E9DED4111DECA79800B1DBC7 /* AppDelegate.swift in Sources */,
 			);
