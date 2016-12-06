@@ -11,13 +11,21 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var passField: FancyField!
+    @IBOutlet weak var emailField: FancyField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        emailField.delegate = self
+        passField.delegate = self
+        
+
+        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,9 +72,68 @@ class SignInVC: UIViewController {
                 
             }
             
+            
+            
         })
         
     }
     
+    @IBAction func signInTapped(_ sender: Any) {
+        
+        if let email = emailField.text, let pwd = passField.text {
+            
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                if error == nil {
+                    print("TODD: Email User Authenticated with Firebase")
+                    
+                } else {
+                    
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        if error != nil {
+                            
+                            print("TODD: Unable to authenticate with Firebase using email")
+                            
+                        } else {
+                            
+                            print("TODD: Successfully authenticated with Firebase")
+                            
+                        }
+                    })
+                    
+                }
+            })
+            
+        }
+        
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailField.endEditing(true)
+        emailField.returnKeyType = UIReturnKeyType.done
+        
+        passField.endEditing(true)
+        passField.returnKeyType = UIReturnKeyType.done
+        
+        
+    
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        
+            textField.resignFirstResponder()
+            return true
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 

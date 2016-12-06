@@ -17,6 +17,7 @@ class FancyField: UITextField {
         layer.borderWidth = 1.0
         layer.cornerRadius = 2.0
         
+        
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -27,4 +28,5 @@ class FancyField: UITextField {
         return bounds.insetBy(dx: 10, dy: 5)
     }
 
+    
 }
