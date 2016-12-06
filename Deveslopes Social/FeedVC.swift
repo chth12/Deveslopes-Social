@@ -20,7 +20,8 @@ class FeedVC: UIViewController {
     @IBAction func signOut(_ sender: Any) {
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "goToSignIn", sender: nil)
+        //performSegue(withIdentifier: "goToSignIn", sender: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }
