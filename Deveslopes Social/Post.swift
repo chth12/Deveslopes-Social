@@ -15,7 +15,6 @@ class Post {
     private var _postKey: String!
     
     var caption: String {
-        
         return _caption
     }
     var imageURL: String {
@@ -28,9 +27,9 @@ class Post {
         return _postKey
     }
     
-    init(caption: String, imageURl: String, likes: Int) {
+    init(caption: String, imageURL: String, likes: Int) {
         self._caption = caption
-        self._imageURL = imageURl
+        self._imageURL = imageURL
         self._likes = likes
     }
     init(postKey: String, postData: Dictionary<String, Any>) {

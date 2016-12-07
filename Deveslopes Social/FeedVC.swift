@@ -27,7 +27,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
-                    print("SNAP: \(snap.key)")
                     if let postDict = snap.value as? Dictionary<String, Any> {
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
@@ -44,12 +43,23 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print("TODD: \(posts.count)")
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostCell
-    }
+        
+        let post = posts[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
+            //print("TODD: imageURL - \(post.imageURL), Comment - \(post.caption), Likes - \(post.likes)")
+            cell.configureCell(post: post)
+            return cell
+        } else {
+            //print("TODD: could not configure cell")
+            return PostCell()
+        }
+}
     
     @IBAction func signOut(_ sender: Any) {
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
