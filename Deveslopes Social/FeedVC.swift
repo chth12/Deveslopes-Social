@@ -16,11 +16,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var imageAdd: CircleView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var postLabel: UILabel!
+    @IBOutlet weak var captionField: FancyField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
-
+    var imageSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
+            imageSelected = true
             
         } else {
             print("TODD: Did not pick a valid photo")
@@ -89,6 +91,29 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         try! FIRAuth.auth()?.signOut()
         //performSegue(withIdentifier: "goToSignIn", sender: nil)
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func postButtonTapped(_ sender: Any) {
+        guard let caption = captionField.text, caption != "" else {
+            print("TODD: Caption must be entered")
+            return
+        }
+        guard let img = imageAdd.image, imageSelected == true else {
+            print("TODD: An image must be selected")
+            return
+        }
+        if let imageData = UIImageJPEGRepresentation(img, 0.2) {
+            let imgUID = NSUUID().uuidString
+            let metaData = FIRStorageMetadata()
+            metaData.contentType = "image/jpeg"
+            DataService.ds.REF_POST_IMAGES.child(imgUID).put(imageData, metadata: metaData) {(metadata, error) in
+                if error != nil {
+                    print("TODD: Unable to upload image to Firebase storage")
+                } else {
+                    print("TODD: Successfully loaded image to Firebsae storage")
+                    let downloadURL = metaData.downloadURL()?.absoluteString
+                }
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
