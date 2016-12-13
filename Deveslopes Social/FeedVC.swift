@@ -22,6 +22,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,10 +111,35 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     print("TODD: Unable to upload image to Firebase storage")
                 } else {
                     print("TODD: Successfully loaded image to Firebsae storage")
-                    let downloadURL = metaData.downloadURL()?.absoluteString
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    print("TODD: metaData: \(metadata)")
+                    print("TODD: metaData.downloadURL()?: \(metadata?.downloadURL()) ")
+                    print("TODD: metaData.downloadURL().absoulteString?: \(metadata?.downloadURL()?.absoluteString) ")
+                    
+                    if let url = downloadURL {
+                        self.postToFirebase(imgURL: url)
+                        print("TODD: the variable url = \(url)")
+                        
+                    }
                 }
             }
         }
+    }
+    
+    func postToFirebase(imgURL: String) {
+        let post: Dictionary<String, Any> = [
+            "caption": captionField.text!,
+            "imageURL": imgURL,
+            "likes": 0
+        ]
+        print("TODD: Post Dictionary is : \(post)")
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        imageAdd.image = UIImage(named: "add-image")
+        tableView.reloadData()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
