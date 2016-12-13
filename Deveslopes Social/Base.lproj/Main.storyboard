@@ -329,6 +329,7 @@
                                         <connections>
                                             <outlet property="caption" destination="j5V-Ih-X8G" id="FGQ-dp-OVL"/>
                                             <outlet property="likes" destination="LXm-M4-Sii" id="MLG-tp-1W8"/>
+                                            <outlet property="likesImage" destination="nVn-7f-NVw" id="QId-26-iUU"/>
                                             <outlet property="postImg" destination="mwS-Iy-oJL" id="aYK-Ew-4Gf"/>
                                             <outlet property="profileImage" destination="4xq-je-s1C" id="cIA-bI-lXN"/>
                                             <outlet property="usernameLbl" destination="GHv-X5-rCr" id="jZ6-kT-u0U"/>

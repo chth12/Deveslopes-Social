@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseStorage
+import FirebaseDatabase
 
 class PostCell: UITableViewCell {
 
@@ -16,16 +17,22 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var likes: UILabel!
-    
-    var post: Post!
+    @IBOutlet weak var likesImage: UIImageView!
 
+    var post: Post!
+    var likesref: FIRDatabaseReference!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1
+        likesImage.addGestureRecognizer(tap)
+        likesImage.isUserInteractionEnabled = true
     }
-
+    
     func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
+        likesref = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         self.caption.text = post.caption
         self.likes.text = "\(post.likes)"
         
@@ -33,20 +40,41 @@ class PostCell: UITableViewCell {
             self.postImg.image = img
             
         } else {
-                let ref = FIRStorage.storage().reference(forURL: post.imageURL)
-                ref.data(withMaxSize: 5 * 1024 * 1024, completion: {(data, error) in
-                    if error != nil {
-                        print("TODD: Unable to download image from Firebase Storage")
-                    } else {
-                        print("TODD: Image downloaded from Firebase Storage")
-                        if let imgData = data {
-                            if let img = UIImage(data: imgData) {
-                                self.postImg.image = img
-                                FeedVC.imageCache.setObject(img, forKey: post.imageURL as NSString)
-                            }
+            let ref = FIRStorage.storage().reference(forURL: post.imageURL)
+            ref.data(withMaxSize: 5 * 1024 * 1024, completion: {(data, error) in
+                if error != nil {
+                    print("TODD: Unable to download image from Firebase Storage")
+                } else {
+                    print("TODD: Image downloaded from Firebase Storage")
+                    if let imgData = data {
+                        if let img = UIImage(data: imgData) {
+                            self.postImg.image = img
+                            FeedVC.imageCache.setObject(img, forKey: post.imageURL as NSString)
                         }
                     }
-                })
+                }
+            })
         }
+        likesref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.likesImage.image = UIImage(named: "empty-heart")
+            } else {
+                self.likesImage.image = UIImage(named: "filled-heart")
+            }
+        })
+    }
+    
+    func likeTapped(sender: UITapGestureRecognizer) {
+        likesref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.likesImage.image = UIImage(named: "filled-heart")
+                self.post.adjustLikes(addLike: true)
+                self.likesref.setValue(true)
+            } else {
+                self.likesImage.image = UIImage(named: "empty-heart")
+                self.post.adjustLikes(addLike: false)
+                self.likesref.removeValue()
+            }
+        })
     }
 }

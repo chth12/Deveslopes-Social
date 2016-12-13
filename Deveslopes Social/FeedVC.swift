@@ -63,16 +63,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             
             if let img = FeedVC.imageCache.object(forKey: post.imageURL as NSString) {
                 cell.configureCell(post: post, img: img)
-                return cell
             } else {
                 cell.configureCell(post: post)
+            }
             return cell
-                }
         } else {
-            //print("TODD: could not configure cell")
             return PostCell()
         }
-}
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
@@ -112,9 +110,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 } else {
                     print("TODD: Successfully loaded image to Firebsae storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
-                    print("TODD: metaData: \(metadata)")
-                    print("TODD: metaData.downloadURL()?: \(metadata?.downloadURL()) ")
-                    print("TODD: metaData.downloadURL().absoulteString?: \(metadata?.downloadURL()?.absoluteString) ")
                     
                     if let url = downloadURL {
                         self.postToFirebase(imgURL: url)
