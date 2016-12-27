@@ -21,6 +21,9 @@ class PostCell: UITableViewCell {
 
     var post: Post!
     var likesref: FIRDatabaseReference!
+    var profile: UITapGestureRecognizer!
+    var controller = UIViewController()
+    var storyBoard = UIStoryboard()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +31,10 @@ class PostCell: UITableViewCell {
         tap.numberOfTapsRequired = 1
         likesImage.addGestureRecognizer(tap)
         likesImage.isUserInteractionEnabled = true
+        profile = UITapGestureRecognizer(target: self, action: #selector(profilePressed))
+        profile.numberOfTapsRequired = 1
+        profileImage.addGestureRecognizer(profile)
+        profileImage.isUserInteractionEnabled = true
     }
     
     func configureCell(post: Post, img: UIImage? = nil) {
@@ -76,5 +83,19 @@ class PostCell: UITableViewCell {
                 self.likesref.removeValue()
             }
         })
+        
     }
+    func profilePressed(sender: Any) {
+        print("TODD: Pressed")
+        storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        print("TODD: \(storyBoard)")
+        controller = storyBoard.instantiateViewController(withIdentifier: "FeedVC")
+        print("TODD: \(controller)")
+        //controller.navigationController?.pushViewController(controller, animated: true)
+        //controller.navigationController?.performSegue(withIdentifier: "toProfileVC", sender: nil)
+        //controller.performSegue(withIdentifier: "toProfileVC", sender: nil)
+        //controller.profilePressed(sender: sender)
+        //print("\(controller.performSegue(withIdentifier: "toProfileVC", sender: sender))")
+    }
+
 }

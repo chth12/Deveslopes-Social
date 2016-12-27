@@ -22,6 +22,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
+    
    
     
     override func viewDidLoad() {
@@ -45,6 +46,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             }
             self.tableView.reloadData()
         })
+
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -144,6 +146,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @IBAction func profilePressed(_ sender: Any) {
+        print("TODD: Press accepted")
+        performSegue(withIdentifier: "toProfileVC", sender: sender)
+    }
+    
+    func fromImage(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toProfileVC", sender: sender)
     }
 
 }

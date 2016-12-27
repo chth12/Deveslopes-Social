@@ -140,7 +140,7 @@
         <!--FeedVC-->
         <scene sceneID="Bpw-UO-e6f">
             <objects>
-                <viewController id="2AF-KO-PLT" customClass="FeedVC" customModule="Deveslopes_Social" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedVC" id="2AF-KO-PLT" customClass="FeedVC" customModule="Deveslopes_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EBs-so-gy6"/>
                         <viewControllerLayoutGuide type="bottom" id="AGs-uz-Q5R"/>
@@ -169,6 +169,17 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuE-xf-hge">
+                                        <rect key="frame" x="302" y="26" width="65" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Profile">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="profilePressed:" destination="2AF-KO-PLT" eventType="touchUpInside" id="O9p-Hc-vFN"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -251,8 +262,9 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-S8-Itc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="60"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-je-s1C" customClass="CircleView" customModule="Deveslopes_Social" customModuleProvider="target">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-je-s1C" customClass="CircleView" customModule="Deveslopes_Social" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                            <gestureRecognizers/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="60" id="Ym2-EU-v58"/>
                                                                                 <constraint firstAttribute="width" constant="60" id="qGl-mn-hFQ"/>
@@ -273,16 +285,15 @@
                                                                         </imageView>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-Iy-oJL">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-Iy-oJL">
                                                                     <rect key="frame" x="0.0" y="65" width="327" height="181"/>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j5V-Ih-X8G">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5V-Ih-X8G">
                                                                     <rect key="frame" x="0.0" y="251" width="327" height="50"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="aJ5-gU-8WC"/>
                                                                     </constraints>
-                                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
@@ -355,6 +366,7 @@
                         <outlet property="captionField" destination="PQS-Bu-1bi" id="Imf-mE-4HI"/>
                         <outlet property="imageAdd" destination="6Ay-li-wk7" id="aWH-48-jfZ"/>
                         <outlet property="tableView" destination="roB-AZ-U4C" id="E8r-7b-fBa"/>
+                        <segue destination="xnA-Mh-1Jj" kind="show" identifier="toProfileVC" id="r6w-VR-Fwy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilN-eP-LDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,6 +383,112 @@
             </objects>
             <point key="canvasLocation" x="981.60000000000002" y="123.68815592203899"/>
         </scene>
+        <!--ProfileVC-->
+        <scene sceneID="ohf-5W-Eiz">
+            <objects>
+                <viewController storyboardIdentifier="ProfileVC" title="ProfileVC" id="xnA-Mh-1Jj" customClass="ProfileVC" customModule="Deveslopes_Social" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3sH-oM-nda"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pzv-gy-8oa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uox-lJ-Qfn" customClass="FancySignIn" customModule="Deveslopes_Social" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALL-ex-8is">
+                                <rect key="frame" x="0.0" y="73" width="375" height="594"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="iAk-QI-sZJ" customClass="CircleView" customModule="Deveslopes_Social" customModuleProvider="target">
+                                        <rect key="frame" x="107.5" y="8" width="160" height="160"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="1Rb-dL-Wvg"/>
+                                            <constraint firstAttribute="height" constant="160" id="2tF-bL-fEa"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="7ec-Xi-CAn" appends="YES" id="F0k-sZ-0LF"/>
+                                        </connections>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZG-6c-dXn" customClass="FancyField" customModule="Deveslopes_Social" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="213" width="225" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="isI-7L-uGz"/>
+                                            <constraint firstAttribute="height" constant="70" id="vQG-gH-bC6"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="iAk-QI-sZJ" firstAttribute="top" secondItem="ALL-ex-8is" secondAttribute="top" constant="8" id="6w7-iw-hxA"/>
+                                    <constraint firstItem="iAk-QI-sZJ" firstAttribute="centerX" secondItem="ALL-ex-8is" secondAttribute="centerX" id="VpY-Ed-DA1"/>
+                                    <constraint firstItem="lZG-6c-dXn" firstAttribute="top" secondItem="iAk-QI-sZJ" secondAttribute="bottom" constant="45" id="hWp-sf-cJt"/>
+                                    <constraint firstItem="lZG-6c-dXn" firstAttribute="centerX" secondItem="ALL-ex-8is" secondAttribute="centerX" id="s7L-aQ-fMQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIi-A1-anL" customClass="FancyView" customModule="Deveslopes_Social" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-os-UsZ">
+                                        <rect key="frame" x="8" y="19" width="45" height="38"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="Zzk-d1-BD6"/>
+                                            <constraint firstAttribute="width" constant="45" id="lXf-F0-loj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEA-FA-EIx">
+                                        <rect key="frame" x="149.5" y="20" width="77.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="dms-Fa-lhS"/>
+                                    <constraint firstItem="Wa1-os-UsZ" firstAttribute="leading" secondItem="hIi-A1-anL" secondAttribute="leading" constant="8" id="e4s-yb-gy5"/>
+                                    <constraint firstItem="gEA-FA-EIx" firstAttribute="centerX" secondItem="hIi-A1-anL" secondAttribute="centerX" id="rQV-dm-2ku"/>
+                                    <constraint firstItem="Wa1-os-UsZ" firstAttribute="top" secondItem="hIi-A1-anL" secondAttribute="top" constant="19" id="ttB-HW-3AF"/>
+                                    <constraint firstItem="Wa1-os-UsZ" firstAttribute="centerY" secondItem="gEA-FA-EIx" secondAttribute="centerY" id="xGG-ef-4u3"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="w9V-fQ-2ZY" appends="YES" id="KVq-4I-XUq"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ALL-ex-8is" firstAttribute="leading" secondItem="uox-lJ-Qfn" secondAttribute="leading" id="0Hm-Md-7vs"/>
+                            <constraint firstAttribute="trailing" secondItem="hIi-A1-anL" secondAttribute="trailing" id="0zI-JY-VxZ"/>
+                            <constraint firstItem="hIi-A1-anL" firstAttribute="top" secondItem="uox-lJ-Qfn" secondAttribute="top" id="4MF-RZ-8Jg"/>
+                            <constraint firstItem="Pzv-gy-8oa" firstAttribute="top" secondItem="ALL-ex-8is" secondAttribute="bottom" id="9Tm-dE-sYp"/>
+                            <constraint firstAttribute="trailing" secondItem="ALL-ex-8is" secondAttribute="trailing" id="Jua-gv-HUk"/>
+                            <constraint firstItem="ALL-ex-8is" firstAttribute="top" secondItem="hIi-A1-anL" secondAttribute="bottom" constant="8" id="U54-Np-VFI"/>
+                            <constraint firstItem="hIi-A1-anL" firstAttribute="leading" secondItem="uox-lJ-Qfn" secondAttribute="leading" id="ku1-uJ-Yd4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="profilePic" destination="iAk-QI-sZJ" id="Ai5-UR-OtD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgX-xA-Zo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="w9V-fQ-2ZY" userLabel="backTapGestureRecgonizer">
+                    <connections>
+                        <action selector="backTapped:" destination="xnA-Mh-1Jj" id="omX-f4-p2y"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="7ec-Xi-CAn" userLabel="addImageTapGestureRecognizer">
+                    <connections>
+                        <action selector="addImageTapped:" destination="xnA-Mh-1Jj" id="0Um-31-eRv"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1682.4000000000001" y="129.08545727136433"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add-image" width="88" height="88"/>
@@ -378,8 +496,7 @@
         <image name="devslopes-logo" width="150" height="94"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
-        <image name="placeholder" width="567" height="312"/>
-        <image name="profile" width="113" height="155"/>
+        <image name="imgplaceholder" width="225" height="225"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>
